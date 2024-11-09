@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Basic reset for body and html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;  /* Light gray background */
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Centering content */
+        .container {
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: rgb(162, 0, 255);
+            animation: fadeIn 3s ease-out;
+        }
+
+        /* Rainbow animation for Steph404 */
+        .rainbow-text {
+            font-weight: bold;
+            display: inline-block;
+            animation: rainbow 3s linear infinite; /* Infinite animation */
+        }
+
+        /* Rainbow color transition animation */
+        @keyframes rainbow {
+            0% {
+                color: red;
+            }
+            14% {
+                color: orange;
+            }
+            28% {
+                color: yellow;
+            }
+            42% {
+                color: green;
+            }
+            57% {
+                color: blue;
+            }
+            71% {
+                color: indigo;
+            }
+            85% {
+                color: violet;
+            }
+            100% {
+                color: red;
+            }
+        }
+
+        /* Title fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Styling buttons */
+        .nav-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            background-color: #7700ff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative; /* To position the tooltip */
+        }
+
+        /* Button hover effects */
+        .nav-button:hover {
+            transform: translateY(-5px); /* Button moves up slightly */
+            background-color: #5700bb; /* Darker purple on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Larger shadow */
+        }
+
+        /* Active button effect */
+        .nav-button:active {
+            transform: translateY(2px); /* Button depresses slightly on click */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button focus animation */
+        .nav-button:focus {
+            outline: none;
+            animation: pulse 1s infinite;
+        }
+
+        /* Pulse effect for focus */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Tooltip styling */
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            top: 120%; /* Position below the button */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;  /* Increased horizontal padding */
+            border-radius: 5px;
+            font-size: 14px;
+            width: 200px;  /* Fixed width for tooltip */
+            text-align: center;  /* Center align the text */
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 10;
+        }
+
+        /* Show tooltip on button hover */
+        .nav-button:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1><span class="rainbow-text">Welcome</span> to Steph404's OCs site</h1> <!-- "Steph404" has the rainbow color animation -->
+        <button class="nav-button" onclick="window.location.href='Normal.html';">
+            Purvena
+            <span class="tooltip">Purple Hyena<br>("Purpura"= Purple, "Venatrix"= Huntress)</span> <!-- Tooltip text -->
+        </button>
+        <button class="nav-button" onclick="window.location.href='index.html';">
+            Steph (WIP)
+            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span> <!-- Tooltip text -->
+        </button>
+    </div>
+
+</body>
+</html>
