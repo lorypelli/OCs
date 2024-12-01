@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
-        /* Basic reset for body and html */
+        
         * {
             margin: 0;
             padding: 0;
@@ -17,11 +17,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000000;  /* Light gray background */
+            background-color: #000000;  
             font-family: 'Arial', sans-serif;
         }
 
-        /* Centering content */
+        
         .container {
             text-align: center;
             animation: fadeIn 1s ease-out;
@@ -34,14 +34,14 @@
             animation: fadeIn 3s ease-out;
         }
 
-        /* Rainbow animation for Steph404 */
+        
         .rainbow-text {
             font-weight: bold;
             display: inline-block;
-            animation: rainbow 3s linear infinite; /* Infinite animation */
+            animation: rainbow 3s linear infinite;
         }
 
-        /* Rainbow color transition animation */
+        
         @keyframes rainbow {
             0% {
                 color: red;
@@ -69,7 +69,7 @@
             }
         }
 
-        /* Title fade-in animation */
+        
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -81,7 +81,7 @@
             }
         }
 
-        /* Styling buttons */
+        
         .nav-button {
             display: inline-block;
             margin: 20px;
@@ -96,29 +96,29 @@
             cursor: pointer;
             transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative; /* To position the tooltip */
+            position: relative; 
         }
 
-        /* Button hover effects */
+        
         .nav-button:hover {
-            transform: translateY(-5px); /* Button moves up slightly */
-            background-color: #5700bb; /* Darker purple on hover */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Larger shadow */
+            transform: translateY(-5px); 
+            background-color: #5700bb; 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
         }
 
-        /* Active button effect */
+       
         .nav-button:active {
-            transform: translateY(2px); /* Button depresses slightly on click */
+            transform: translateY(2px); 
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* Button focus animation */
+        
         .nav-button:focus {
             outline: none;
             animation: pulse 1s infinite;
         }
 
-        /* Pulse effect for focus */
+        
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -131,26 +131,26 @@
             }
         }
 
-        /* Tooltip styling */
+        
         .tooltip {
             visibility: hidden;
             position: absolute;
-            top: 120%; /* Position below the button */
+            top: 120%; 
             left: 50%;
             transform: translateX(-50%);
             background-color: #333;
             color: white;
-            padding: 10px 20px;  /* Increased horizontal padding */
+            padding: 10px 20px;  
             border-radius: 5px;
             font-size: 14px;
-            width: 200px;  /* Fixed width for tooltip */
-            text-align: center;  /* Center align the text */
+            width: 200px;  
+            text-align: center;  
             opacity: 0;
             transition: opacity 0.3s ease, visibility 0.3s ease;
             z-index: 10;
         }
 
-        /* Show tooltip on button hover */
+        
         .nav-button:hover .tooltip {
             visibility: visible;
             opacity: 1;
@@ -161,26 +161,26 @@
 <body>
 
     <div class="container">
-        <h1><span class="rainbow-text">Welcome</span> to Steph404's OCs site</h1> <!-- "Steph404" has the rainbow color animation -->
+        <h1><span class="rainbow-text">Welcome</span> to Steph404's OCs site</h1> 
         <button class="nav-button" onclick="window.location.href='Normal.html';">
             Purvena
-            <span class="tooltip">Purple Hyena<br>("Purpura"= Purple, "Venatrix"= Huntress)</span> <!-- Tooltip text -->
+            <span class="tooltip">Purple Hyena<br>("Purpura"= Purple, "Venatrix"= Huntress)</span>
         </button>
         <button class="nav-button" onclick="window.location.href='index.html';">
             Steph (WIP)
-            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span> <!-- Tooltip text -->
+            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span>
         </button>
         <button class="nav-button" onclick="window.location.href='index.html';">
             ZeMangoFur (WIP)
-            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span> <!-- Tooltip text -->
+            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span>
         </button>
         <button class="nav-button" onclick="window.location.href='index.html';">
             Minchel (WIP)
-            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span> <!-- Tooltip text -->
+            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span>
         </button>
         <button class="nav-button" onclick="window.location.href='index.html';">
             L-Rexo (WIP)
-            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span> <!-- Tooltip text -->
+            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span>
         </button>
     </div>
 
