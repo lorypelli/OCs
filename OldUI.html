@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;  
+            font-family: 'Arial', sans-serif;
+        }
+
+        
+        .container {
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: rgb(162, 0, 255);
+            animation: fadeIn 3s ease-out;
+        }
+
+        
+        .rainbow-text {
+            font-weight: bold;
+            display: inline-block;
+            animation: rainbow 3s linear infinite;
+        }
+
+        
+        @keyframes rainbow {
+            0% {
+                color: red;
+            }
+            14% {
+                color: orange;
+            }
+            28% {
+                color: yellow;
+            }
+            42% {
+                color: green;
+            }
+            57% {
+                color: blue;
+            }
+            71% {
+                color: indigo;
+            }
+            85% {
+                color: violet;
+            }
+            100% {
+                color: red;
+            }
+        }
+
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        
+        .nav-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            background-color: #7700ff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative; 
+        }
+
+        
+        .nav-button:hover {
+            transform: translateY(-5px); 
+            background-color: #5700bb; 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+        }
+
+       
+        .nav-button:active {
+            transform: translateY(2px); 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .nav-button:focus {
+            outline: none;
+            animation: pulse 1s infinite;
+        }
+
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            top: 120%; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;  
+            border-radius: 5px;
+            font-size: 14px;
+            width: 200px;  
+            text-align: center;  
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 10;
+        }
+
+        
+        .nav-button:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1><span class="rainbow-text">Welcome</span> to Steph404's OCs site</h1> 
+        <button class="nav-button" onclick="window.location.href='Purvena/Normal.html';">
+            Purvena
+            <span class="tooltip">Purple Hyena<br><br>("Purpura"= Purple, "Venatrix"= Huntress)</span>
+        </button>
+        <button class="nav-button" onclick="window.location.href='index.html';">
+            Steph (WIP)
+            <span class="tooltip">WIP!! 3D models on html are hard to make yknow?!</span>
+        </button>
+        <button class="nav-button" onclick="window.location.href='Maruva/Normal.html';">
+            Maruva
+            <span class="tooltip">Yellow Mamagen<br><br>("Maru"-> Mater = Mother, "Vatis"= Prophet)</span>
+        </button>
+        <button class="nav-button" onclick="window.location.href='Ignisera/Normal.html';">
+            Ignisera (WIP)
+            <span class="tooltip">Female Wyvern<br><br>("Ignis"= Fire, "Sera"= Evening)</span>
+        </button>
+        <button class="nav-button" onclick="window.location.href='index.html';">
+            Rosfeles (WIP)
+            <span class="tooltip">Pink cheetah<br><br>("Rosa"= Pink, "Feles"= Cat)</span>
+        </button>
+    </div>
+
+</body>
+</html>
