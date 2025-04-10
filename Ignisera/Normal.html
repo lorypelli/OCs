@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #000000;
+        overflow: hidden;  
+        position: relative;
+      }
+      model-viewer {
+        width: 100%;
+        height: 100%;
+      }
+      /* Style for the button container */
+      .button-container {
+        position: absolute;
+        right: 20px;  /* Position the group of buttons on the right side */
+        top: 50%;  /* Start the container at the center of the screen */
+        transform: translateY(-50%);  /* Vertically center the container */
+        display: flex;
+        flex-direction: column;
+        gap: 2px; /* Space between buttons */
+      }
+      /* Style for individual buttons */
+      .nav-button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 150px; /* Set a consistent width for all buttons */
+      }
+      .nav-button:hover {
+        background-color: #0056b3;  /* Darker shade on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add model-viewer tag with a local 3D model -->
+    <model-viewer src="/Ignisera/Models/Ignisera Normal.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1.14" exposure="1" shadow-softness="0.33" camera-orbit="59.68deg 81.13deg 18.16m" field-of-view="12deg">
+      <button slot="ar-button" id="ar-button">
+        View in your space
+      </button>
+    </model-viewer>
+
+    <!-- Container for the vertically aligned buttons -->
+    <div class="button-container">
+      <button class="nav-button" onclick="window.location.href='../index.html';">Home</button>
+      <button class="nav-button" onclick="window.location.href='Lava.html';">Lava Variant</button>
+      <button class="nav-button" onclick="window.location.href='Old.html';">Old Texture</button>
+    </div>
+
+    <!-- Loads <model-viewer> for modern browsers -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+    <script>
+      const annotationClicked = (a) => {
+        let ds = a.parentNode.dataset;
+        mv.cameraTarget = ds.target;
+        mv.cameraOrbit = ds.orbit;
+
+        if (ds.fov !== undefined) mv.fieldOfView = ds.fov;
+      };
+    </script>
+  </body>
+</html>

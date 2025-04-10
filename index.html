@@ -1,188 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <style>
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body, html {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000000;  
-            font-family: 'Arial', sans-serif;
-        }
-
-        
-        .container {
-            text-align: center;
-            animation: fadeIn 1s ease-out;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: rgb(162, 0, 255);
-            animation: fadeIn 3s ease-out;
-        }
-
-        
-        .rainbow-text {
-            font-weight: bold;
-            display: inline-block;
-            animation: rainbow 3s linear infinite;
-        }
-
-        
-        @keyframes rainbow {
-            0% {
-                color: red;
-            }
-            14% {
-                color: orange;
-            }
-            28% {
-                color: yellow;
-            }
-            42% {
-                color: green;
-            }
-            57% {
-                color: blue;
-            }
-            71% {
-                color: indigo;
-            }
-            85% {
-                color: violet;
-            }
-            100% {
-                color: red;
-            }
-        }
-
-        
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        
-        .nav-button {
-            display: inline-block;
-            margin: 20px;
-            padding: 20px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: white;
-            background-color: #7700ff;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative; 
-        }
-
-        
-        .nav-button:hover {
-            transform: translateY(-5px); 
-            background-color: #5700bb; 
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
-        }
-
-       
-        .nav-button:active {
-            transform: translateY(2px); 
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        
-        .nav-button:focus {
-            outline: none;
-            animation: pulse 1s infinite;
-        }
-
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        
-        .tooltip {
-            visibility: hidden;
-            position: absolute;
-            top: 120%; 
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;  
-            border-radius: 5px;
-            font-size: 14px;
-            width: 200px;  
-            text-align: center;  
-            opacity: 0;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: 10;
-        }
-
-        
-        .nav-button:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steph404's OCs</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #111;
+      overflow: hidden;
+    }
+    /* Main container styles */
+    .mindmap-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Central node */
+    .center-node {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a200ff, #5700bb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 30px rgba(162, 0, 255, 0.7);
+      text-align: center;
+      z-index: 2;
+    }
+    .center-node h1 {
+      font-size: 1.5rem;
+      color: #fff;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    /* Navigation nodes (buttons) styles */
+    .nav-node {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #7700ff;
+      border: 2px solid #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+    }
+    /* Tooltip styling */
+    .nav-node .tooltip {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      bottom: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 13px;
+      width: 160px;
+      text-align: center;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .nav-node:hover {
+      background-color: #5700bb;
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    .nav-node:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+    /* Animation for nodes appearing */
+    .nav-node.animate {
+      animation: floatIn 1s forwards;
+    }
+    @keyframes floatIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.5) translate(0, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translate(var(--tx), var(--ty));
+      }
+    }
+    /* Radial positions for each nav node */
+    /* Using CSS variables for x and y translation offsets */
+    .nav-node.node1 { --tx: -250px; --ty: -250px; }
+    .nav-node.node2 { --tx: 250px; --ty: -250px; }
+    .nav-node.node3 { --tx: 300px; --ty: 100px; }
+    .nav-node.node4 { --tx: 0px; --ty: 300px; }
+    .nav-node.node5 { --tx: -300px; --ty: 100px; }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1><span class="rainbow-text">Welcome</span> to Steph404's OCs site</h1> 
-        <button class="nav-button" onclick="window.location.href='Purvena/Normal.html';">
-            Purvena
-            <span class="tooltip">Purple Hyena<br>("Purpura"= Purple, "Venatrix"= Huntress)</span>
-        </button>
-        <button class="nav-button" onclick="window.location.href='index.html';">
-            Steph (WIP)
-            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span>
-        </button>
-        <button class="nav-button" onclick="window.location.href='Maruva/Normal.html';">
-            Maruva
-            <span class="tooltip">Yellow Mamagen<br>("Maru"-> Mater = Mother, "Vatis"= Prophet)</span>
-        </button>
-        <button class="nav-button" onclick="window.location.href='index.html';">
-            Minchel (WIP)
-            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span>
-        </button>
-        <button class="nav-button" onclick="window.location.href='index.html';">
-            L-Rexo (WIP)
-            <span class="tooltip">WIP!! 3D models on html are hard yknow?!</span>
-        </button>
+    
+  <div class="mindmap-container">
+    <div class="center-node">
+      <h1>Steph404's<br>OCs</h1>
     </div>
+    <!-- Navigation nodes arranged radially -->
+    <div class="nav-node node1" onclick="window.location.href='Purvena/Normal.html';">
+      Purvena
+      <div class="tooltip">
+        Purple Hyena<br><br>
+        ("Purpura"= Purple, "Venatrix"= Huntress)
+      </div>
+    </div>
+    <div class="nav-node node2" onclick="window.location.href='index.html';">
+      Steph (WIP)
+      <div class="tooltip">
+        WIP!! 3D models on html are hard to make yknow?!
+      </div>
+    </div>
+    <div class="nav-node node3" onclick="window.location.href='Maruva/Normal.html';">
+      Maruva
+      <div class="tooltip">
+        Yellow Mamagen<br><br>
+        ("Maru" -> Mater = Mother, "Vatis"= Prophet)
+      </div>
+    </div>
+    <div class="nav-node node4" onclick="window.location.href='Ignisera/Normal.html';">
+      Ignisera (WIP)
+      <div class="tooltip">
+        Female Wyvern<br><br>
+        ("Ignis"= Fire, "Sera"= Evening)
+      </div>
+    </div>
+    <div class="nav-node node5" onclick="window.location.href='index.html';">
+      Rosfeles (WIP)
+      <div class="tooltip">
+        Pink cheetah<br><br>
+        ("Rosa"= Pink, "Feles"= Cat)
+      </div>
+    </div>
+  </div>
 
+  <script>
+    // Trigger the animation on nav nodes after a slight delay
+    window.addEventListener('load', () => {
+      const navNodes = document.querySelectorAll('.nav-node');
+      navNodes.forEach((node, index) => {
+        // Delay each node's animation for a cascading effect
+        setTimeout(() => {
+          node.classList.add('animate');
+        }, index * 200);
+      });
+    });
+  </script>
 </body>
 </html>
